@@ -1,4 +1,5 @@
 import Layout, { Content } from 'antd/lib/layout/layout';
+import HomeContent from './HomeContent';
 import HomeHeader from './HomeHeader';
 import './index.less';
 
@@ -6,7 +7,9 @@ const Home = () => {
   return (
     <Layout className="layout">
       <HomeHeader />
-      <Content>content</Content>
+      <Content className="content">
+        <HomeContent />
+      </Content>
     </Layout>
   );
 };
