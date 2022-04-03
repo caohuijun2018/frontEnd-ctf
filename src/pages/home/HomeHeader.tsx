@@ -1,6 +1,7 @@
+import { Link, NavLink } from '@modern-js/runtime/router';
 import { Button, Menu } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
-import logo from '../images/logo.jpg';
+import logo from '../../components/images/logo.jpg';
 
 import './index.less';
 
@@ -21,7 +22,13 @@ const HomeHeader = () => {
         <Menu.Item key="messageBook">留言板</Menu.Item>
         <Menu.Item key="notice">公告</Menu.Item>
       </Menu>
-      <Button size="small" type="primary" className="login-button">
+      <Button
+        size="small"
+        type="primary"
+        className="login-button"
+        href="/login"
+        // onClick={() => <Link to={'/login'} />}
+      >
         登陆
       </Button>
       <Button size="small" type="primary" className="register-button">

@@ -5,7 +5,7 @@ import './index.less';
 
 const Home = () => {
   return (
-    <Layout className="layout">
+    <Layout>
       <HomeHeader />
       <Content className="content">
         <HomeContent />
