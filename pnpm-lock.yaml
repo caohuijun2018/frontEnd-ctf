@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@ant-design/icons': ^4.7.0
   '@modern-js/app-tools': ^1.0.0
   '@modern-js/plugin-jarvis': ^1.0.0
   '@modern-js/plugin-less': ^1.2.3
@@ -8,18 +9,22 @@ specifiers:
   '@types/node': ^14
   '@types/react': ^17
   '@types/react-dom': ^17
+  '@types/react-highlight-words': ^0.16.4
   antd: ^4.19.3
   del-cli: ^4.0.1
   react: ^17.0.1
   react-dom: ^17.0.1
+  react-highlight-words: ^0.17.0
   typescript: ^4
 
 dependencies:
+  '@ant-design/icons': 4.7.0_react-dom@17.0.2+react@17.0.2
   '@modern-js/plugin-less': 1.2.3
   '@modern-js/runtime': 1.2.3_react-dom@17.0.2+react@17.0.2
   antd: 4.19.3_react-dom@17.0.2+react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-highlight-words: 0.17.0_react@17.0.2
 
 devDependencies:
   '@modern-js/app-tools': 1.4.4_typescript@4.6.3
@@ -27,6 +32,7 @@ devDependencies:
   '@types/node': 14.18.12
   '@types/react': 17.0.43
   '@types/react-dom': 17.0.14
+  '@types/react-highlight-words': 0.16.4
   del-cli: 4.0.1
   typescript: 4.6.3
 
@@ -3878,6 +3884,12 @@ packages:
       '@types/react': 17.0.43
     dev: false
 
+  /@types/react-highlight-words/0.16.4:
+    resolution: {integrity: sha512-KITBX3xzheQLu2s3bUgLmRE7ekmhc52zRjRTwkKayQARh30L4fjEGzGm7ULK9TuX2LgxWWavZqyQGDGjAHbL3w==}
+    dependencies:
+      '@types/react': 17.0.43
+    dev: true
+
   /@types/react-router-dom/5.3.3:
     resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
     dependencies:
@@ -7082,6 +7094,10 @@ packages:
     hasBin: true
     dev: true
 
+  /highlight-words-core/1.2.2:
+    resolution: {integrity: sha512-BXUKIkUuh6cmmxzi5OIbUJxrG8OAk2MqoL1DtO3Wo9D2faJg2ph5ntyuQeLqaHJmzER6H5tllCDA9ZnNe9BVGg==}
+    dev: false
+
   /history/4.10.1:
     resolution: {integrity: sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==}
     dependencies:
@@ -8161,6 +8177,10 @@ packages:
     dependencies:
       fs-monkey: 1.0.3
     dev: true
+
+  /memoize-one/4.0.3:
+    resolution: {integrity: sha512-QmpUu4KqDmX0plH4u+tf0riMc1KHE1+lw95cMrLlXQAFOx/xnBtwhZ52XJxd9X2O6kwKBqX32kmhbhlobD0cuw==}
+    dev: false
 
   /memoize-one/6.0.0:
     resolution: {integrity: sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==}
@@ -10053,6 +10073,17 @@ packages:
       react: 17.0.2
       react-fast-compare: 3.2.0
       react-side-effect: 2.1.1_react@17.0.2
+    dev: false
+
+  /react-highlight-words/0.17.0_react@17.0.2:
+    resolution: {integrity: sha512-uX1Qh5IGjnLuJT0Zok234QDwRC8h4hcVMnB99Cb7aquB1NlPPDiWKm0XpSZOTdSactvnClCk8LOmVlP+75dgHA==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0-0 || ^17.0.0-0
+    dependencies:
+      highlight-words-core: 1.2.2
+      memoize-one: 4.0.3
+      prop-types: 15.8.1
+      react: 17.0.2
     dev: false
 
   /react-is/16.13.1:

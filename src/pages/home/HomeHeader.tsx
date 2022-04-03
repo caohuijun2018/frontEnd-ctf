@@ -16,9 +16,16 @@ const HomeHeader = () => {
         mode="horizontal"
         defaultSelectedKeys={['2']}
         className="header">
-        <Menu.Item key="center">赛事中心</Menu.Item>
-        <Menu.Item key="topicRanklist">题目排行榜</Menu.Item>
-        <Menu.Item key="userRanklist">用户排行榜</Menu.Item>
+        <Menu.Item key="center">
+          <NavLink to={'/'} />
+          在赛事中心
+        </Menu.Item>
+        <Menu.Item key="topicRanklist">
+          <NavLink to={'/topicList'} /> 题目排行榜
+        </Menu.Item>
+        <Menu.Item key="userRanklist">
+          <NavLink to={'/userList'} /> 用户榜单
+        </Menu.Item>
         <Menu.Item key="messageBook">留言板</Menu.Item>
         <Menu.Item key="notice">公告</Menu.Item>
       </Menu>
