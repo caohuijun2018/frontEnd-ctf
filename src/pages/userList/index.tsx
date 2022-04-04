@@ -1,7 +1,7 @@
 import { Button, Input, Pagination, Space, Table } from 'antd';
 import Highlighter from 'react-highlight-words';
 import './index.less';
-import { SearchOutlined } from '@ant-design/icons';
+import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
 import { SetStateAction, useState } from 'react';
 import { useModel } from '@modern-js/runtime/model';
 import fooModel from './api';
@@ -137,6 +137,12 @@ const UserList = () => {
   ];
   return (
     <div className="userlist">
+      <Button
+        style={{ position: 'relative', top: ' -70px' }}
+        type="primary"
+        href="/">
+        <LeftOutlined />
+      </Button>
       <Table
         columns={columns}
         dataSource={rankingList}

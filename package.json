@@ -38,6 +38,7 @@
   ],
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@antv/g2plot": "^2.4.15",
     "@modern-js/plugin-less": "^1.2.3",
     "@modern-js/runtime": "^1.0.0",
     "antd": "^4.19.3",

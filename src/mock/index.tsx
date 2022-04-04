@@ -166,3 +166,54 @@ export const rankingList = [
     ranking: 8,
   },
 ];
+
+export const QuestionList = [
+  {
+    questionId: 1001,
+    key: 1002,
+    questionTitle: '题目',
+    type: 'Web',
+    tryPersonCount: 100, // 尝试人数
+    successfulPersonCount: 102,
+  },
+  {
+    questionId: 1002,
+    key: 1002,
+    questionTitle: '题目2',
+    type: 'Web',
+    tryPersonCount: 100, // 尝试人数
+    successfulPersonCount: 102,
+  },
+  {
+    questionId: 1003,
+    key: 1003,
+    questionTitle: '题目1',
+    type: 'Web',
+    tryPersonCount: 100, // 尝试人数
+    successfulPersonCount: 102,
+  },
+  {
+    questionId: 1004,
+    key: 1004,
+    questionTitle: '题目19',
+    type: 'qqq',
+    tryPersonCount: 100, // 尝试人数
+    successfulPersonCount: 102,
+  },
+  {
+    questionId: 1005,
+    key: 1005,
+    questionTitle: '题目11',
+    type: 'Web',
+    tryPersonCount: 100, // 尝试人数
+    successfulPersonCount: 102,
+  },
+  {
+    questionId: 1006,
+    key: 1006,
+    questionTitle: '题目',
+    type: 'hqhq',
+    tryPersonCount: 100, // 尝试人数
+    successfulPersonCount: 102,
+  },
+];

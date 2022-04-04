@@ -5,6 +5,7 @@ import Home from './pages/home';
 import Register from './pages/register';
 import TopicList from './pages/topicList';
 import UserList from './pages/userList';
+import Center from './pages/center';
 
 function App() {
   return (
@@ -39,6 +40,12 @@ function App() {
             <title>用户榜单</title>
           </Helmet>
           <UserList />
+        </Route>
+        <Route path="/center" exact={true}>
+          <Helmet>
+            <title>个人中心</title>
+          </Helmet>
+          <Center />
         </Route>
       </Switch>
     </div>
