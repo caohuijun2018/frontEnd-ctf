@@ -1,4 +1,13 @@
-export const topicList = [
+export interface TopicList {
+  questionId: number;
+  questionTitle: string;
+  type: string;
+  describe: string;
+  point: number;
+  isCollection: boolean;
+  successfulPersonCount: number;
+}
+export const topicList: Array<TopicList> = [
   {
     questionId: 10,
     questionTitle: 'easy_web',

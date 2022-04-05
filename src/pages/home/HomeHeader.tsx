@@ -21,7 +21,7 @@ const HomeHeader = () => {
         className="header">
         <Menu.Item key="center">
           <NavLink to={'/'} />
-          在赛事中心
+          赛事中心
         </Menu.Item>
         <Menu.Item key="topicRanklist">
           <NavLink to={'/topicList'} /> 题目排行榜

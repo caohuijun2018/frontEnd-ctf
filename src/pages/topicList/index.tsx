@@ -2,7 +2,6 @@ import { Button, Input, Space, Table } from 'antd';
 import { SetStateAction, useState } from 'react';
 import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
-import { Link } from '@modern-js/runtime/router';
 import { QuestionList } from '@/mock';
 
 const TopicList = () => {

@@ -1,11 +1,12 @@
-import { Button, Input, Pagination, Space, Table } from 'antd';
+import { Button, Input, Space, Table } from 'antd';
 import Highlighter from 'react-highlight-words';
 import './index.less';
 import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
 import { SetStateAction, useState } from 'react';
 import { useModel } from '@modern-js/runtime/model';
+import { ColumnsType } from 'antd/lib/table';
 import fooModel from './api';
-import { rankingList } from '@/mock';
+import { rankingList, TopicList } from '@/mock';
 
 const UserList = () => {
   const [state, action] = useModel(fooModel);
