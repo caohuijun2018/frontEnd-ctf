@@ -2,8 +2,12 @@ import { Button, Input, Space, Table } from 'antd';
 import { SetStateAction, useState } from 'react';
 import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
+import styled from '@modern-js/runtime/styled';
 import { QuestionList } from '@/mock';
 
+const BackButton = styled(Button)`
+  border-radius: 100px;
+`;
 const TopicList = () => {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
@@ -126,12 +130,14 @@ const TopicList = () => {
   return (
     <>
       <div className="userlist">
-        <Button
+        <BackButton
           style={{ position: 'relative', top: ' -70px' }}
-          type="primary"
+          // type="primary"
           href="/">
           <LeftOutlined />
-        </Button>
+        </BackButton>
+        {/* <LeftCircleTwoTone /> */}
+
         <Table columns={columns} dataSource={QuestionList} />
       </div>
     </>

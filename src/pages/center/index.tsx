@@ -16,7 +16,10 @@ const Center = () => {
     <div className="center-content">
       <h2 style={{ margin: '0 0 20px 0px' }}>个人信息</h2>
       <div className="data-content">
-        <Row gutter={24} style={{ margin: '0 0 50px 0' }}>
+        <div className="line">
+          <UserLine />
+        </div>
+        <Row gutter={24} style={{ margin: '40px 0 50px 0' }}>
           <Col span={12} style={{ padding: '0 20px 0 92px' }} className="first">
             <Card
               style={{ width: 300, height: '100%' }}
@@ -44,9 +47,6 @@ const Center = () => {
             <UserSpeed />
           </Col>
         </Row>
-        <div className="line">
-          <UserLine />
-        </div>
       </div>
     </div>
   );

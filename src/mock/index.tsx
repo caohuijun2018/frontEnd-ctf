@@ -100,7 +100,15 @@ export const topicList: Array<TopicList> = [
     successfulPersonCount: 2,
   },
 ];
-
+export interface RankingList {
+  userId: number;
+  key: number;
+  name: string;
+  successfulCount: number;
+  lastTime: string;
+  userPoint: number;
+  ranking: number;
+}
 export const rankingList = [
   {
     userId: 100,

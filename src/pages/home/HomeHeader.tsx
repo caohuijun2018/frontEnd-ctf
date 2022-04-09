@@ -6,6 +6,7 @@ import logo from '../../components/images/logo.jpg';
 import allModel from '@/api/store';
 
 import './index.less';
+import { UserOutlined } from '@ant-design/icons/lib/icons';
 
 const HomeHeader = () => {
   const [state, action] = useModel(allModel);
@@ -41,6 +42,7 @@ const HomeHeader = () => {
           个人中心
         </Button>
       ) : (
+        // <UserOutlined style={{ width: '50px', heigh: '50px' }} />
         <>
           <Button
             size="small"

@@ -4,10 +4,13 @@ import './index.less';
 import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
 import { SetStateAction, useState } from 'react';
 import { useModel } from '@modern-js/runtime/model';
-import { ColumnsType } from 'antd/lib/table';
+import styled from '@modern-js/runtime/styled';
 import fooModel from './api';
-import { rankingList, TopicList } from '@/mock';
+import { rankingList } from '@/mock';
 
+const BackButton = styled(Button)`
+  border-radius: 100px;
+`;
 const UserList = () => {
   const [state, action] = useModel(fooModel);
   const [searchText, setSearchText] = useState('');
@@ -138,12 +141,9 @@ const UserList = () => {
   ];
   return (
     <div className="userlist">
-      <Button
-        style={{ position: 'relative', top: ' -70px' }}
-        type="primary"
-        href="/">
+      <BackButton style={{ position: 'relative', top: ' -70px' }} href="/">
         <LeftOutlined />
-      </Button>
+      </BackButton>
       <Table
         columns={columns}
         dataSource={rankingList}
