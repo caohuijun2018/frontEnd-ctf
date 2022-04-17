@@ -1,9 +1,35 @@
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input, message } from 'antd';
+import axios from 'axios';
+import { useHistory } from '@modern-js/runtime/router';
 import './index.less';
+import { useModel } from '@modern-js/runtime/model';
+import allModel from '@/api/store';
 
 const Login = () => {
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
+  const history = useHistory();
+  const [state, actions] = useModel(allModel);
+  const onFinish = async (values: any) => {
+    await axios({
+      method: 'post',
+      url: 'http://localhost:9090/api/user/login',
+      data: {
+        userID: values.username,
+        password: values.password,
+      },
+    })
+      .then(res => {
+        const { success } = res.data.entity;
+        if (success) {
+          message.success('登陆成功！');
+          actions.setLogin(true);
+          setTimeout(() => {
+            history.push('/');
+          }, 1000);
+        }
+      })
+      .catch(_ => {
+        message.error('登陆失败，请重新登陆！');
+      });
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -34,14 +60,6 @@ const Login = () => {
             rules={[{ required: true, message: '密码不得为空!' }]}>
             <Input.Password />
           </Form.Item>
-
-          {/* <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{ offset: 8, span: 16 }}>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item> */}
-
           <Form.Item wrapperCol={{ offset: 11, span: 16 }}>
             <Button type="primary" htmlType="submit">
               登陆

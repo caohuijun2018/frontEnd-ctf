@@ -5,9 +5,19 @@ import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
 import { SetStateAction, useState } from 'react';
 import { useModel } from '@modern-js/runtime/model';
 import styled from '@modern-js/runtime/styled';
+import { ColumnsType } from 'antd/es/table';
 import fooModel from './api';
 import { rankingList } from '@/mock';
 
+interface User {
+  userId: number;
+  key: number;
+  name: string;
+  successfulCount: number;
+  lastTime: string;
+  userPoint: number;
+  ranking: number;
+}
 const BackButton = styled(Button)`
   border-radius: 100px;
 `;
@@ -109,7 +119,7 @@ const UserList = () => {
     pageSize: state.pageSize,
     onChange: () => change,
   };
-  const columns = [
+  const columns: ColumnsType<User> = [
     {
       title: '用户名',
       dataIndex: 'name',

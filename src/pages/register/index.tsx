@@ -1,9 +1,33 @@
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input, message } from 'antd';
+import { useHistory } from '@modern-js/runtime/router';
+import axios from 'axios';
 import './index.less';
 
 const Register = () => {
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
+  const history = useHistory();
+  const onFinish = async (values: any) => {
+    await axios({
+      method: 'post',
+      url: 'http://localhost:9090/api/user/register',
+      data: {
+        userID: values.username,
+        password: values.password,
+        username: values.nickName,
+      },
+    })
+      .then(res => {
+        const { success } = res.data.entity;
+        if (success) {
+          message.success('注册成功！');
+          setTimeout(() => {
+            history.push('/login');
+          }, 1000);
+        }
+      })
+      .catch(_ => {
+        message.error('注册失败，请重新注册！');
+      });
+    // console.log('Success:', values);
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -27,7 +51,12 @@ const Register = () => {
             rules={[{ required: true, message: '用户名不得为空！' }]}>
             <Input />
           </Form.Item>
-
+          <Form.Item
+            label="昵称"
+            name="nickName"
+            rules={[{ required: true, message: '昵称不得为空！' }]}>
+            <Input />
+          </Form.Item>
           <Form.Item
             name="password"
             label="密码"

@@ -32,8 +32,8 @@ const HomeContent = () => {
         <TabPane tab="Crypto" key="3">
           <TopicCard list={handleList(topicList, 'Crypto')} />
         </TabPane>
-        <TabPane tab="test" key="4">
-          <TopicCard list={handleList(topicList, 'test')} />
+        <TabPane tab="SQL注入" key="4">
+          <TopicCard list={handleList(topicList, 'SQL')} />
         </TabPane>
       </Tabs>
     </div>

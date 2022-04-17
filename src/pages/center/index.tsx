@@ -8,7 +8,6 @@ import {
 import { Card, Avatar, Col, Row } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import UserSpeed from './userSpeed';
-import Line from './line';
 import UserLine from './line';
 
 const Center = () => {

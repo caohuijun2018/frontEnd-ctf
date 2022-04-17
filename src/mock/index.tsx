@@ -6,44 +6,51 @@ export interface TopicList {
   point: number;
   isCollection: boolean;
   successfulPersonCount: number;
+  url?: string;
+  flag?: string;
 }
 export const topicList: Array<TopicList> = [
   {
     questionId: 10,
-    questionTitle: 'easy_web',
+    questionTitle: 'key 在哪里？',
     type: 'Web',
-    describe:
-      '这是一道简单的 web 类型题目, 主要是用于训练使用者关于web方面的知识.',
+    describe: 'key就在这里中，你能找到他吗？',
     point: 200,
     isCollection: true,
     successfulPersonCount: 20,
+    url: 'http://lab1.xseclab.com/base1_4a4d993ed7bd7d467b27af52d2aaa800/index.php',
+    flag: 'jflsjklejflkdsjfklds',
   },
   {
     questionId: 11,
-    questionTitle: 'xxxxx',
-    type: 'Web',
-    describe: '这是一道简单的 web 类型题目',
+    questionTitle: '登陆',
+    type: 'SQL',
+    describe: '能成功找到登陆密码吗？',
     point: 200,
     isCollection: false,
     successfulPersonCount: 2,
+    url: 'http://lab1.xseclab.com/sqli2_3265b4852c13383560327d1c31550b60/index.php',
+    flag: '',
   },
   {
     questionId: 12,
-    questionTitle: 'xxxx',
+    questionTitle: '上传图片',
     type: 'Web',
-    describe: '这是一道简单的 web 类型题目',
+    describe: '请上传一张jpg格式的图片',
     point: 200,
     isCollection: true,
     successfulPersonCount: 2,
+    url: 'http://lab1.xseclab.com/upload3_67275a14c1f2dbe0addedfd75e2da8c1/',
   },
   {
     questionId: 13,
-    questionTitle: 'xxxxx',
-    type: 'Crypto',
-    describe: '这是一道简单的 web 类型题目',
+    questionTitle: 'key又又找不到了',
+    type: 'Web',
+    describe: '你在能帮忙找找 key 吗？',
     point: 200,
     isCollection: true,
     successfulPersonCount: 2,
+    url: 'http://lab1.xseclab.com/xss1_30ac8668cd453e7e387c76b132b140bb/index.php',
   },
   {
     questionId: 14,
@@ -54,15 +61,15 @@ export const topicList: Array<TopicList> = [
     isCollection: true,
     successfulPersonCount: 2,
   },
-  {
-    questionId: 15,
-    questionTitle: 'xxxxx',
-    type: 'Crypto',
-    describe: '这是一道简单的 web 类型题目',
-    point: 200,
-    isCollection: true,
-    successfulPersonCount: 2,
-  },
+  // {
+  //   questionId: 15,
+  //   questionTitle: 'xxxxx',
+  //   type: 'Crypto',
+  //   describe: '这是一道简单的 web 类型题目',
+  //   point: 200,
+  //   isCollection: true,
+  //   successfulPersonCount: 2,
+  // },
   {
     questionId: 16,
     questionTitle: 'xxxxx',
@@ -76,24 +83,6 @@ export const topicList: Array<TopicList> = [
     questionId: 17,
     questionTitle: 'xxxxx',
     type: 'Web',
-    describe: '这是一道简单的 web 类型题目',
-    point: 200,
-    isCollection: true,
-    successfulPersonCount: 2,
-  },
-  {
-    questionId: 18,
-    questionTitle: 'xxxxx',
-    type: 'Web',
-    describe: '这是一道简单的 web 类型题目',
-    point: 200,
-    isCollection: true,
-    successfulPersonCount: 2,
-  },
-  {
-    questionId: 19,
-    questionTitle: 'xxxxx',
-    type: 'Crypto',
     describe: '这是一道简单的 web 类型题目',
     point: 200,
     isCollection: true,
@@ -195,7 +184,7 @@ export const QuestionList = [
   },
   {
     questionId: 1002,
-    key: 1002,
+    key: 1007,
     questionTitle: '题目2',
     type: 'Web',
     tryPersonCount: 100, // 尝试人数

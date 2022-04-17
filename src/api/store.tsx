@@ -4,7 +4,7 @@ import { model } from '@modern-js/runtime/model';
 const allModel = model('all').define(() => {
   return {
     state: {
-      login: true,
+      login: false,
     },
     actions: {
       setA(state, a: string) {
@@ -15,6 +15,13 @@ const allModel = model('all').define(() => {
         return {
           ...state,
           a,
+        };
+      },
+      changeLogin(state, flag: boolean) {
+        state.login = flag;
+        return {
+          ...state,
+          flag,
         };
       },
     },
