@@ -6,6 +6,9 @@ import Register from './pages/register';
 import TopicList from './pages/topicList';
 import UserList from './pages/userList';
 import Center from './pages/center';
+import Index from './pages/bulletins';
+import Admin from './pages/admin';
+import Question from './pages/addQuestion';
 
 function App() {
   return (
@@ -46,6 +49,24 @@ function App() {
             <title>个人中心</title>
           </Helmet>
           <Center />
+        </Route>
+        <Route path="/bulletins" exact={true}>
+          <Helmet>
+            <title>公告栏</title>
+          </Helmet>
+          <Index />
+        </Route>
+        <Route path="/admin" exact={true}>
+          <Helmet>
+            <title>数据</title>
+          </Helmet>
+          <Admin />
+        </Route>
+        <Route path="/addQuestion" exact={true}>
+          <Helmet>
+            <title>题目</title>
+          </Helmet>
+          <Question />
         </Route>
       </Switch>
     </div>

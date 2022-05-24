@@ -6,7 +6,7 @@ import './index.less';
 const Home = () => {
   return (
     <Layout>
-      <HomeHeader />
+      <HomeHeader defaultValue={'center'} />
       <Content className="content">
         <HomeContent />
       </Content>

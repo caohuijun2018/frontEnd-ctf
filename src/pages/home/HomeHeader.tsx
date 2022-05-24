@@ -1,15 +1,12 @@
-import { useModel } from '@modern-js/runtime/model';
-import { Link, NavLink } from '@modern-js/runtime/router';
+import { NavLink } from '@modern-js/runtime/router';
 import { Button, Menu } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
 import logo from '../../components/images/logo.jpg';
-import allModel from '@/api/store';
 
 import './index.less';
-import { UserOutlined } from '@ant-design/icons/lib/icons';
 
-const HomeHeader = () => {
-  const [state, action] = useModel(allModel);
+const HomeHeader = (props: { defaultValue: string }) => {
+  const { defaultValue } = props;
   return (
     <Header className="home-header">
       <div className="logo">
@@ -18,7 +15,7 @@ const HomeHeader = () => {
       <Menu
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['2']}
+        defaultSelectedKeys={defaultValue}
         className="header">
         <Menu.Item key="center">
           <NavLink to={'/'} />
@@ -30,10 +27,12 @@ const HomeHeader = () => {
         <Menu.Item key="userRanklist">
           <NavLink to={'/userList'} /> 用户榜单
         </Menu.Item>
-        <Menu.Item key="messageBook">留言板</Menu.Item>
-        <Menu.Item key="notice">公告</Menu.Item>
+        <Menu.Item key="notice">
+          <NavLink to={'/bulletins'} />
+          公告
+        </Menu.Item>
       </Menu>
-      {state.login ? (
+      {localStorage.getItem('userId') ? (
         <Button
           size="small"
           type="primary"

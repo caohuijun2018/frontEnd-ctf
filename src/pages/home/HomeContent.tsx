@@ -11,6 +11,8 @@ interface Topic {
   point: number;
   isCollection: boolean;
   successfulPersonCount: number;
+  url?: string | undefined;
+  flag?: string;
 }
 const HomeContent = () => {
   const { TabPane } = Tabs;

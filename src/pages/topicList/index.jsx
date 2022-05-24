@@ -1,28 +1,15 @@
 import { Button, Input, Space, Table } from 'antd';
-import Highlighter from 'react-highlight-words';
-import './index.less';
-import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
 import { SetStateAction, useState } from 'react';
-import { useModel } from '@modern-js/runtime/model';
+import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
+import Highlighter from 'react-highlight-words';
 import styled from '@modern-js/runtime/styled';
-import { ColumnsType } from 'antd/es/table';
-import fooModel from './api';
-import { rankingList } from '@/mock';
+import HomeHeader from '../home/HomeHeader';
+import { QuestionList } from '@/mock';
 
-interface User {
-  userId: number;
-  key: number;
-  name: string;
-  successfulCount: number;
-  lastTime: string;
-  userPoint: number;
-  ranking: number;
-}
 const BackButton = styled(Button)`
   border-radius: 100px;
 `;
-const UserList = () => {
-  const [state, action] = useModel(fooModel);
+const TopicList = () => {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const handleSearch = (
@@ -110,57 +97,49 @@ const UserList = () => {
         text
       ),
   });
-  const change = (pageIndex: number) => {
-    action.setCurrent(pageIndex);
-  };
-  const pagination = {
-    total: state.total,
-    current: state.current,
-    pageSize: state.pageSize,
-    onChange: () => change,
-  };
-  const columns: ColumnsType<User> = [
+  const columns = [
     {
-      title: '用户名',
-      dataIndex: 'name',
-      key: 'name',
-      width: '30%',
-      ...getColumnSearchProps('name'),
+      title: 'ID',
+      dataIndex: 'questionId',
+      key: 'questionId',
+      width: '10%',
     },
     {
-      title: '解题数',
-      dataIndex: 'successfulCount',
-      key: 'successfulCount',
-      width: '30%',
+      title: '题目',
+      dataIndex: 'questionTitle',
+      key: 'questionTitle',
+      width: '20%',
+      ...getColumnSearchProps('questionTitle'),
     },
     {
-      title: '最近解题时间',
-      dataIndex: 'lastTime',
-      key: 'lastTime',
+      title: '类型',
+      dataIndex: 'type',
+      key: 'type',
+      ...getColumnSearchProps('type'),
     },
     {
-      title: '积分',
-      dataIndex: 'userPoint',
-      key: 'userPoint',
+      title: '尝试人数',
+      dataIndex: 'tryPersonCount',
+      key: 'tryPersonCount',
     },
     {
-      title: '排名',
-      dataIndex: 'ranking',
-      key: 'ranking',
+      title: '成功人数',
+      dataIndex: 'successfulPersonCount',
+      key: 'successfulPersonCount',
     },
   ];
   return (
-    <div className="userlist">
-      <BackButton style={{ position: 'relative', top: ' -70px' }} href="/">
-        <LeftOutlined />
-      </BackButton>
-      <Table
-        columns={columns}
-        dataSource={rankingList}
-        pagination={pagination}
-      />
-    </div>
+    <>
+      <HomeHeader defaultValue="topicRanklist" />
+      <div className="userlist">
+        {/* <BackButton style={{ position: 'relative', top: ' -70px' }} href="/">
+          <LeftOutlined />
+        </BackButton> */}
+
+        <Table columns={columns} dataSource={QuestionList} />
+      </div>
+    </>
   );
 };
 
-export default UserList;
+export default TopicList;

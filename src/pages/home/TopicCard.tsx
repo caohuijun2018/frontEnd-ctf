@@ -12,8 +12,8 @@ interface Topic {
   point: number;
   isCollection: boolean;
   successfulPersonCount: number;
-  url: string;
-  flag: string;
+  url?: string;
+  flag?: string;
 }
 const TopicCard = (props: { list: Array<Topic> }) => {
   const history = useHistory();

@@ -21,6 +21,7 @@ const Login = () => {
         const { success } = res.data.entity;
         if (success) {
           message.success('登陆成功！');
+          localStorage.setItem('userId', res.data.entity.data)
           actions.setLogin(true);
           setTimeout(() => {
             history.push('/');
