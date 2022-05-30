@@ -37,6 +37,9 @@ const HomeContent = () => {
         <TabPane tab="SQL注入" key="4">
           <TopicCard list={handleList(topicList, 'SQL')} />
         </TabPane>
+        <TabPane tab="解密" key="5">
+          <TopicCard list={handleList(topicList, '解密')} />
+        </TabPane>
       </Tabs>
     </div>
   );

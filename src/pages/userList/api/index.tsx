@@ -3,9 +3,9 @@ import { model, useModel } from '@modern-js/runtime/model';
 const fooModel = model('foo').define(() => {
   return {
     state: {
-      current: 3,
+      current: 1,
       pageSize: 10,
-      total: 100,
+      total: 9,
     },
     actions: {
       setA(state, a: string) {

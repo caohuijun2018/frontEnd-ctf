@@ -1,15 +1,15 @@
 import { Button, Input, Space, Table } from 'antd';
-import { SetStateAction, useState } from 'react';
-import { LeftOutlined, SearchOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 import styled from '@modern-js/runtime/styled';
 import HomeHeader from '../home/HomeHeader';
-import { QuestionList } from '@/mock';
+import { topicList } from '@/mock';
 
 const BackButton = styled(Button)`
   border-radius: 100px;
 `;
-const TopicList = () => {
+const Index = () => {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const handleSearch = (
@@ -98,12 +98,12 @@ const TopicList = () => {
       ),
   });
   const columns = [
-    {
-      title: 'ID',
-      dataIndex: 'questionId',
-      key: 'questionId',
-      width: '10%',
-    },
+    // {
+    //   title: 'ID',
+    //   dataIndex: 'questionId',
+    //   key: 'questionId',
+    //   width: '10%',
+    // },
     {
       title: '题目',
       dataIndex: 'questionTitle',
@@ -136,10 +136,10 @@ const TopicList = () => {
           <LeftOutlined />
         </BackButton> */}
 
-        <Table columns={columns} dataSource={QuestionList} />
+        <Table columns={columns} dataSource={topicList} />
       </div>
     </>
   );
 };
 
-export default TopicList;
+export default Index;
